@@ -1,0 +1,14 @@
+# Binarios e artefatos de compilacao
+build/
+*.o
+*.obj
+*.exe
+*.out
+*.a
+*.so
+*.dSYM/
+
+# Editores / sistema
+.vscode/
+.idea/
+.DS_Store

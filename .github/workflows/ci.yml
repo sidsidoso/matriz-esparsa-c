@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compilador
+        run: gcc --version
+
+      - name: Testes (com AddressSanitizer e UBSan)
+        run: make test SANITIZE=1
+
+      - name: Limpar
+        run: make clean
+
+      - name: Demo
+        run: make run
